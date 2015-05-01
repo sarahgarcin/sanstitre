@@ -42,8 +42,53 @@ li {
 	}
 }
 
+
+//SECTION ABOUT
 #about{
-	position: absolute;
+	color:blue;
+	position:fixed;
+	width: 38%;
+	height:100%;
+	top: 0px;
+	// left:0px;
+	background-color: rgba(255, 255, 255, 0.95);/*couleur du texte*/
+	padding:30px 60px 30px 30px;
+	z-index: 11;
+	cursor: pointer;
+	p{
+		font-family: 'Karla', sans-serif;
+  	font-size: 1.25em;
+  	line-height: 1.2em;
+  	font-weight: bold;
+  }
+
+	h1, h2, h3{
+		color:blue;
+		font-size: 1.25em;
+		font-weight: bold;
+		padding-left: 30px;
+	}
+
+
+	.about-title{
+		-webkit-transform:rotate(-90deg);
+		-moz-transform:rotate(-90deg);
+		-o-transform: rotate(-90deg);
+		position:absolute;
+		top:135px;
+		right:-40px;
+		h1{
+			font-size: 1.6em;
+			margin: 0;
+		}
+	}
+
+	.columnize{
+		width: 47%;
+		display: inline-block;
+		vertical-align: top;
+	}
+
 }
 
 .entretien { 
@@ -71,4 +116,24 @@ li {
 		font-size: 1.1em;
 		line-height: 1.35em;
 	}
+}
+
+.stabilo {
+	background-color: #FFFF00;
+}
+
+
+//CUSTOM SCROLLBAR
+.jspVerticalBar{
+	background-color: #FFF;
+	width:12px;
+}
+
+.jspTrack{
+	background-color: #D4D3D3;
+}
+
+
+.jspDrag{
+	background-color: blue;
 }

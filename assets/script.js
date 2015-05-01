@@ -20,11 +20,12 @@ $(document).ready(function(){
 
 	divChemin.each(function(){
 		var nbChemin = $(this).attr('data-chemin');
+		var nameChemin = $(this).attr('data-name');
 		cheminsAll.push(nbChemin);
 		//Check if value are duplicate
 		if ( ! unique_chemins[nbChemin] ) {
       unique_chemins[nbChemin] = true;
-      chemins.push(nbChemin);
+      chemins.push(nbChemin); 
     } 
     else {
         // We have duplicate values!
@@ -33,10 +34,14 @@ $(document).ready(function(){
 	});
 
 	cheminsAll.sort();
-	// console.log(cheminsAll);
+	//console.log(chemins);
+
+	//count the number of entretien and of chemin
+	var nbrEntretien = $(".entretien").length;
+	var nbChemin = chemins.length; 
 	
 	// display the different chemin as list menu
-	for(i=0; i<chemins.length; i++){
+	for(i=0; i<nbChemin; i++){
 		count = i+1;
 		$("header ul").append("<li id='chem" + count + "'>" + chemins[i] + "</li>")
 	}
@@ -47,47 +52,52 @@ $(document).ready(function(){
 		$(this).addClass("entretien" + countArticles);
 	});
 
-	// for(i=0; i<cheminsAll.length; i++){
-	// 	console.log(cheminsAll[i]);
-	// 	if(cheminsAll[i] == cheminsAll[])
-	// }
-
-	// $(".entretien .chemin").each(function(){
-	// 	var dataChemin = $(this).attr("data-chemin");
-	// 	var idChemin = dataChemin.replace("chemin", "");
-	// 	console.log(idChemin);
-	// });
-
-	var nbrEntretien = $(".entretien").length;
-	var nbrChemin = $("header ul li").length;
-
+	// When click on one of the chemin menu 
 	$("header ul li").each(function(){
 		$(this).click(function(){
+			$(".chemin").removeClass("stabilo");
+			// Add class active to style it 
 			if($(this).hasClass('active')){
 				$(this).removeClass('active');
 			}
 			else{
 				$(this).addClass('active');
 			}
-			// $('.chemin[data-chemin="chemin1"]').each(function(){
-			// 	// console.log($(this).parent('.entretien').attr('class'));
-			// });
-		var ID = $(this).attr('id');
-		var nbID = ID.substring(4, 5);
-		// console.log(nbID);
+			
+			// Go to the right Chemin
+			var ID = $(this).attr('id');
+			var nbID = ID.substring(4, 5);
 
 			for(i = 0; i<nbrEntretien; i++){
 				if($('.entretien' + i).children('.chemin[data-chemin="chemin ' + nbID + '"]')){
-					$('.entretien' + i).scrollTo('.chemin[data-chemin="chemin' + nbID + '"]');
+					$('.entretien' + i).scrollTo('.chemin[data-chemin="chemin' + nbID + '"]', 800);
+					$('.chemin[data-chemin="chemin' + nbID + '"]').addClass("stabilo");
 				}
 			}
 		});
 	});
 
+	// Position the #about div out of the window
+	var aboutWidth = $("#about").outerWidth();
+	var aTitleHeight = $("#about .about-title").outerHeight();
+	var aboutLeft = -aboutWidth + aTitleHeight + 20;
+	$("#about").css("left", aboutLeft);
 
+	//Click on a propos - Animate 
+	$("#about").on('click', function(){	
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+			$(this).animate( { left: "+=" + aboutLeft});
+		}
+		else{
+			$(this).addClass('active');
+			$(this).animate( { left: "-=" + aboutLeft});
+		}
+	});
 
-
-
+	
+	//Custom scrollbar for entretien div
+	// $('.entretien').jScrollPane();
 
 	//  ___            __  ___    __        __  
 	// |__  |  | |\ | /  `  |  | /  \ |\ | /__` 
