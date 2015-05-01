@@ -28,6 +28,20 @@ tr {
 	vertical-align: top;
 }
 
+li {
+	list-style: none;
+}
+
+.header{
+	border:none;
+	.chemin-menu{
+		li{
+			display: inline-block; vertical-align: top; margin-right: 50px; cursor: pointer; 
+			&.active{color: yellow;}
+		}
+	}
+}
+
 #about{
 	position: absolute;
 }

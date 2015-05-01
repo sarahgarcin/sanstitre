@@ -12,16 +12,9 @@
   <?php echo css('assets/css/main.css') ?>
   <?php echo css('assets/css/style.css') ?>
 
-  <?php echo js('assets/bower_components/jquery/dist/jquery.min.js') ?>
-  <?php echo js('assets/bower_components/foundation/js/foundation.min.js') ?>
-  <?php echo js('assets/bower_components/jquery-mousewheel/jquery.mousewheel.min.js') ?>
-  <?php echo js('assets/script.js')?>
 </head>
 <body>
 
   <header class="header cf" role="banner">
-    <a class="logo" href="<?php echo url() ?>">
-      <img src="<?php echo url('assets/images/logo.svg') ?>" alt="<?php echo $site->title()->html() ?>" />
-    </a>
-    <?php snippet('menu') ?>
+  <ul class="chemin-menu"></ul>
   </header>

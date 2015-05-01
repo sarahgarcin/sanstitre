@@ -4,11 +4,12 @@
   <div class="wrap">
     <?php foreach($data->children()->visible() as $project): ?>
       <article class="entretien">
-        <h1><?php echo $project->title()?></h1>
-        <h2><?php echo $project->chapeau()?></h2>
-        <p><?php echo $project->text()?></p>
+        <h1><?php echo $project->title()->html()?></h1>
+        <h2><?php echo $project->chapeau()->html()?></h2>
+        <?php echo $project->text()->kirbytext()?>
       </article>
     <?php endforeach ?>
   </div>
 
 </section>
+

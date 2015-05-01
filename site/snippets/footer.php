@@ -1,14 +1,14 @@
   <footer class="footer cf" role="contentinfo">
 
-    <div class="copyright">
-      <?php echo $site->copyright()->kirbytext() ?>
-    </div>
-
-    <div class="colophon">
-      <a href="http://getkirby.com/made-with-kirby-and-love">Made with Kirby and <b>♥</b></a>
-    </div>
 
   </footer>
+    <?php echo js('assets/bower_components/jquery/dist/jquery.min.js') ?>
+  <?php echo js('assets/bower_components/foundation/js/foundation.min.js') ?>
+  <?php echo js('assets/bower_components/animatescroll/animatescroll.min.js') ?>
+  <?php echo js('assets/bower_components/jquery.scrollTo/jquery.scrollTo.min.js') ?>
+  <?php echo js('assets/bower_components/jquery-mousewheel/jquery.mousewheel.min.js') ?>
+  <?php echo js('assets/script.js')?>
 
 </body>
+
 </html>

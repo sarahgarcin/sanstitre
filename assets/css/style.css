@@ -2388,6 +2388,19 @@ body {
 tr {
   vertical-align: top; }
 
+li {
+  list-style: none; }
+
+.header {
+  border: none; }
+  .header .chemin-menu li {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 50px;
+    cursor: pointer; }
+    .header .chemin-menu li.active {
+      color: yellow; }
+
 #about {
   position: absolute; }
 

@@ -1,7 +1,7 @@
 <?php
 
-kirbytext::$tags['wikipedia'] = array(
+kirbytext::$tags['chemin'] = array(
   'html' => function($tag) {
-    return '<a href="http://wikipedia.org/wiki/' . $tag->attr('wikipedia') . '">Wikipedia</a>';
+    return '<div class="chemin" data-chemin="'.$tag->attr('chemin') . '">';
   }
 );
