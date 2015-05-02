@@ -1,16 +1,16 @@
-Title: Kirby Starterkit
+Title: SANS-TITRE
 
 ----
 
-Author: Bastian Allgeier GmbH
+Author: Sarah Garcin
 
 ----
 
-Description: This is Kirby's Starterkit.
+Description: 
 
 ----
 
-Keywords: Kirby, CMS, file-based
+Keywords: 
 
 ----
 

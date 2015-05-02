@@ -17,5 +17,5 @@
 <body>
 
   <header class="header cf" role="banner">
-  <ul class="chemin-menu"></ul>
+  <ul class="chemin-menu"><li class="reset">reset</li></ul>
   </header>

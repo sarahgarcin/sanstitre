@@ -1,27 +1,35 @@
-title: Sans titre
-----
-Colophon: 
-##Colophon
-###Avec les paroles de
-Collectif etc
-Thomas Hirschhorn
-Sophie Ricard
-Gérard Paris-Clavel
+Title: Sans titre
 
-###Coordination éditoriale et design
+----
+
+Colophon: 
+
+## Colophon
+
+### Avec les paroles de
+
+Collectif etc Thomas Hirschhorn Sophie Ricard Gérard Paris-Clavel
+
+### Coordination éditoriale et design
+
 Luc de Fouquet Lucas Meyer
 
-###Relecture
-Jil Daniel
-Florian Stéphant
+### Relecture
 
-###Développement du site
+Jil Daniel Florian Stéphant
+
+### Développement du site
+
 Adrien Goua
 
-###Caractère
-Grotesque 6, Émilie Rigaud,
-distribuée par A is for apple
+### Caractère
+
+Grotesque 6, Émilie Rigaud, distribuée par A is for apple
+
 ----
-About:
-##À propos
+
+About: 
+
+## À propos
+
 Sans-titre est une revue qui interroge de manière horizontale des problématiques traversant les pratiques actuelles de l’Art, du Design et de l’Architecture. Sans-titre accompagne notre pratique comme une boîte à outils faite de retrancriptions d’échanges que nous avons eu avec différents acteurs. Ces échanges nourrissent nos réflexions sur des notions telles que la participation, la transmission et la pédagogie… qui continueront d’évoluer en fonction de nos rencontres. Sans-titre peut se lire par entretien, mais aussi en empruntant les chemins traversants. Interrogeant des termes clés, ils permettront de parcourir les différentes conversations en proposant de nouvelles confrontations, propices à la création d’une vision critique.

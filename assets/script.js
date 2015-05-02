@@ -43,7 +43,7 @@ $(document).ready(function(){
 	// display the different chemin as list menu
 	for(i=0; i<nbChemin; i++){
 		count = i+1;
-		$("header ul").append("<li id='chem" + count + "'>" + chemins[i] + "</li>")
+		$("header ul").append("<li class='chemin-list' id='chem" + count + "'>" + chemins[i] + "</li>")
 	}
 
 	// Add specific class to each "entretien"
@@ -53,28 +53,43 @@ $(document).ready(function(){
 	});
 
 	// When click on one of the chemin menu 
-	$("header ul li").each(function(){
+	$("header ul li.chemin-list").each(function(){
 		$(this).click(function(){
 			$(".chemin").removeClass("stabilo");
 			// Add class active to style it 
 			if($(this).hasClass('active')){
 				$(this).removeClass('active');
+				for(i = 1; i<=nbrEntretien; i++){
+					$(".chemin").removeClass("stabilo");
+					$("header ul li.chemin-list").removeClass('active');
+					$('.entretien' + i).scrollTo(0, 800);
+				}
 			}
 			else{
 				$(this).addClass('active');
-			}
-			
-			// Go to the right Chemin
-			var ID = $(this).attr('id');
-			var nbID = ID.substring(4, 5);
+				// Go to the right Chemin
+				var ID = $(this).attr('id');
+				var nbID = ID.substring(4, 5);
 
-			for(i = 0; i<nbrEntretien; i++){
-				if($('.entretien' + i).children('.chemin[data-chemin="chemin ' + nbID + '"]')){
-					$('.entretien' + i).scrollTo('.chemin[data-chemin="chemin' + nbID + '"]', 800);
-					$('.chemin[data-chemin="chemin' + nbID + '"]').addClass("stabilo");
+				for(i = 1; i<=nbrEntretien; i++){
+					if($('.entretien' + i).children('.chemin[data-chemin="chemin ' + nbID + '"]')){
+						$('.entretien' + i).scrollTo('.chemin[data-chemin="chemin' + nbID + '"]', 800);
+						$('.chemin[data-chemin="chemin' + nbID + '"]').addClass("stabilo");
+					}
 				}
 			}
+			
+
 		});
+	});
+
+	//reset scroll to original position
+	$("header ul li.reset").on('click', function(){
+		for(i = 1; i<=nbrEntretien; i++){
+			$(".chemin").removeClass("stabilo");
+			$("header ul li.chemin-list").removeClass('active');
+			$('.entretien' + i).scrollTo(0, 800);
+		}
 	});
 
 	// Position the #about div out of the window
