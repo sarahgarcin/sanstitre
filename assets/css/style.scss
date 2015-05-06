@@ -21,7 +21,7 @@ body {
 	font-family: 'Karla', sans-serif;
 	overflow-x: scroll;
 	overflow-y: hidden;
-	margin-left: 30px;
+	margin: 0px 30px 0 0;
 }
 
 tr { 
@@ -33,10 +33,25 @@ li {
 }
 
 .header{
+	position: fixed;
 	border:none;
+	min-width: 50px;
+	background-color: blue;
+	color: #FFF;
+	z-index: 99;
+	padding: 20px 10px;
+	.header-arrow{
+		font-size: 35px;
+		position: absolute;
+		top: -15px;
+		right:5px;
+		a{
+			color:#FFF;
+		}
+	}
 	.chemin-menu{
 		li{
-			display: inline-block; vertical-align: top; margin-right: 50px; cursor: pointer; 
+			margin-right: 50px; cursor: pointer; 
 			&.active{color: yellow;}
 		}
 	}
@@ -45,6 +60,7 @@ li {
 
 //SECTION ABOUT
 #about{
+	display: none;
 	color:blue;
 	position:fixed;
 	width: 38%;
@@ -91,30 +107,35 @@ li {
 
 }
 
-.entretien { 
-	// max-width: 480px;
-	// min-width: 200px;
-	padding: 10px 50px 50px 30px; 
-	overflow: scroll;
-	//border :1px solid #000;
-	h1{
-		font-family: 'Karla', sans-serif;
-		font-size: 1.8em;
-	  line-height: 1.2em;
-	  padding-bottom: 25px;
-	  font-weight: bold;
-	  width: 300px;
-	}
-	h2{
-		font-family: 'Karla', sans-serif;
-		font-size: 1.25em;
-		line-height: 1.2em;
-		font-weight: bold;
-		margin-bottom: 30px;
-	}
-	p{
-		font-size: 1.1em;
-		line-height: 1.35em;
+#articles {
+	.entretien { 
+		position: relative;
+		.article-title{
+			padding: 20px 200px 0px 30px; 
+			background-color: #FFF;
+			h1{
+				font-family: 'Karla', sans-serif;
+				font-size: 1.8em;
+			  line-height: 1.2em;
+			  padding-bottom: 20px;; 
+			  font-weight: bold;	
+			}
+		}
+		.article-content{
+			overflow-y: scroll;
+			padding: 0px 50px 100px 30px; 
+			h2{
+				font-family: 'Karla', sans-serif;
+				font-size: 1.25em;
+				line-height: 1.2em;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
+			p{
+				font-size: 1.1em;
+				line-height: 1.35em;
+			}
+		}
 	}
 }
 

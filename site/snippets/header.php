@@ -16,6 +16,9 @@
 </head>
 <body>
 
-  <header class="header cf" role="banner">
-  <ul class="chemin-menu"><li class="reset">reset</li></ul>
+  <header class="header cf active" role="banner">
+    <div class="header-arrow">
+      <a href="#" title="hide menu">←</a>
+    </div>
+    <ul class="chemin-menu"><li class="reset">reset</li></ul>
   </header>

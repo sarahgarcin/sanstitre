@@ -1,4 +1,4 @@
-Title: SANS-TITRE
+Title: REBOND
 
 ----
 
@@ -10,8 +10,8 @@ Description:
 
 ----
 
-Keywords: 
+Keywords: revue,design graphique
 
 ----
 
-Copyright: © 2009-(date: Year) (link: http://getkirby.com text: Kirby)
+Copyright: 

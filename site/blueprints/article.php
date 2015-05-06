@@ -11,6 +11,9 @@ fields:
   year:
     label: Year
     type:  text
+  chapeau:
+    label: Chapeau
+    type:  wysiwyg
   text:
-    label: Text
+    label: Texte
     type:  wysiwyg

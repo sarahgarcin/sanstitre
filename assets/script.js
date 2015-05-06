@@ -1,6 +1,14 @@
 $(document).ready(function(){
 
+	//  _ _   __  ___  _   __  ___  _   ___ 
+	//  ))`) /_`) ))_) )) /_`) ))_) ))  )L  
+	// ((,' (( ( ((`\ (( (( ( ((__)((__((_  
+	                                     
 	var countArticles = 0;
+	var winHeight = $(window).height();
+	var winWidth = $(window).width() - 60;
+	var headerHeight = $('header').outerHeight();
+	var headerWidth = $('.header').width();
 
 	//init fonction
 	HauteurLargeur();
@@ -13,15 +21,15 @@ $(document).ready(function(){
 	$(".wrap").wrapInner("<table cellspacing='30'><tr>");
 	$(".entretien").wrap("<td></td>");
 
-	var divChemin = $(".entretien").children('.chemin');
+	var divChemin = $(".entretien .article-content").children('.chemin');
 	var unique_chemins = {};
 	var chemins = [];
-	var cheminsAll = [];
+	//var cheminsAll = [];
 
 	divChemin.each(function(){
 		var nbChemin = $(this).attr('data-chemin');
 		var nameChemin = $(this).attr('data-name');
-		cheminsAll.push(nbChemin);
+		//cheminsAll.push(nbChemin);
 		//Check if value are duplicate
 		if ( ! unique_chemins[nbChemin] ) {
       unique_chemins[nbChemin] = true;
@@ -33,7 +41,8 @@ $(document).ready(function(){
 		
 	});
 
-	cheminsAll.sort();
+	//cheminsAll.sort();
+	chemins.sort();
 	//console.log(chemins);
 
 	//count the number of entretien and of chemin
@@ -62,7 +71,8 @@ $(document).ready(function(){
 				for(i = 1; i<=nbrEntretien; i++){
 					$(".chemin").removeClass("stabilo");
 					$("header ul li.chemin-list").removeClass('active');
-					$('.entretien' + i).scrollTo(0, 800);
+					$('.entretien'  + i +  ' .article-content').scrollTo(0, 800);
+					console.log($('.entretien'  + i +  ' .article-content'));
 				}
 			}
 			else{
@@ -72,8 +82,8 @@ $(document).ready(function(){
 				var nbID = ID.substring(4, 5);
 
 				for(i = 1; i<=nbrEntretien; i++){
-					if($('.entretien' + i).children('.chemin[data-chemin="chemin ' + nbID + '"]')){
-						$('.entretien' + i).scrollTo('.chemin[data-chemin="chemin' + nbID + '"]', 800);
+					if($('.entretien'  + i +  ' .article-content').children('.chemin[data-chemin="chemin ' + nbID + '"]')){
+						$('.entretien'  + i +  ' .article-content').scrollTo('.chemin[data-chemin="chemin' + nbID + '"]', 800);
 						$('.chemin[data-chemin="chemin' + nbID + '"]').addClass("stabilo");
 					}
 				}
@@ -88,7 +98,7 @@ $(document).ready(function(){
 		for(i = 1; i<=nbrEntretien; i++){
 			$(".chemin").removeClass("stabilo");
 			$("header ul li.chemin-list").removeClass('active');
-			$('.entretien' + i).scrollTo(0, 800);
+			$('.entretien'  + i +  ' .article-content').scrollTo(0, 800);
 		}
 	});
 
@@ -110,6 +120,20 @@ $(document).ready(function(){
 		}
 	});
 
+	// When click on arrow header, animate header to left and hide it
+	$(".header-arrow").on('click', function(){
+		if($(".header").hasClass('active')){
+			$(".header").removeClass('active');
+			$(".header").animate({left:-headerWidth + 10});
+			$("#articles").animate({"margin-left":40});
+		}
+		else{
+			$(".header").addClass('active');
+			$(".header").animate({left:0});
+			$("#articles").animate({"margin-left":headerWidth + 30});
+		}
+	});
+
 	
 	//Custom scrollbar for entretien div
 	// $('.entretien').jScrollPane();
@@ -120,15 +144,20 @@ $(document).ready(function(){
 	                                         
 	//Calcul la hauteur des div des articles
 	function HauteurLargeur(){
-		var winHeight = $(window).height();
-		var hearderHeight = $('header').outerHeight();
-		var articleHeight = winHeight - hearderHeight;
-		$(".entretien").css("height", articleHeight);
+		var titleHeight =  $(".entretien .article-title").outerHeight(true);
+		var articleHeight = winHeight - titleHeight;
+		$(".entretien .article-content").css("height", articleHeight);
+		$(".header").css("height", winHeight);
 
 		//Calcule la largeur des articles (pour qu'il y ait 4 articles dans la fenêtres)
-		var winWidth = $(window).width() - 60;
-		var articleWidth = winWidth / 4;
+		var articleWidth = winWidth / 3.5;
 		$(".entretien").css("width", articleWidth);
+		$(".article-title").css("width", articleWidth-50);
+		var headerWidth = articleWidth/4
+		$(".header").css("width", headerWidth);
+
+		//Calcule la marge de gauche pour les articles
+		$("#articles").css("margin-left", headerWidth);
 	}
 
 
