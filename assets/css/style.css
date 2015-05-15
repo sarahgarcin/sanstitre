@@ -2406,8 +2406,9 @@ li {
   min-width: 50px;
   background-color: blue;
   color: #FFF;
-  z-index: 99;
-  padding: 20px 40px 20px 10px; }
+  z-index: 10;
+  padding: 20px 40px 20px 10px;
+  margin-left: 40px; }
   .header .header-arrow {
     font-size: 35px;
     position: absolute;
@@ -2455,7 +2456,6 @@ li {
         border-bottom: 1px solid yellow; }
 
 #about {
-  display: none;
   color: blue;
   position: fixed;
   width: 38%;

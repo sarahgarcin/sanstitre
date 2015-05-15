@@ -230,7 +230,7 @@ $(document).ready(function(){
 	// Position the #about div out of the window
 	var aboutWidth = $("#about").outerWidth();
 	var aTitleHeight = $("#about .about-title").outerHeight();
-	var aboutLeft = -aboutWidth + aTitleHeight + 20;
+	var aboutLeft = -aboutWidth + aTitleHeight + 5;
 	$("#about").css("left", aboutLeft);
 
 	//Click on a propos - Animate 
@@ -254,12 +254,12 @@ $(document).ready(function(){
 			$(".header").removeClass('active');
 			console.log(headerWidth);
 			$(".header").animate({left:-headerWidth + 40});
-			$("#articles").animate({"margin-left":40});
+			$("#articles").animate({"margin-left":85});
 		}
 		else{
 			$(".header").addClass('active');
 			$(".header").animate({left:0});
-			$("#articles").animate({"margin-left":headerWidth + 30});
+			$("#articles").animate({"margin-left":headerWidth + 40});
 		}
 	});
 
@@ -286,7 +286,7 @@ $(document).ready(function(){
 		$(".header").css("width", headerWidth);
 
 		//Calcule la marge de gauche pour les articles
-		$("#articles").css("margin-left", headerWidth);
+		$("#articles").css("margin-left", headerWidth + 40);
 	}
 
 

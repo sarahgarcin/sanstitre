@@ -50,8 +50,9 @@ li {
 	min-width: 50px;
 	background-color: blue;
 	color: #FFF;
-	z-index: 99;
+	z-index: 10;
 	padding: 20px 40px 20px 10px;
+	margin-left: 40px;
 	.header-arrow{
 		font-size: 35px;
 		position: absolute;
@@ -119,13 +120,13 @@ li {
 
 //SECTION ABOUT
 #about{
-	display: none;
+	//display: none;
 	color:blue;
 	position:fixed;
 	width: 38%;
 	height:100%;
 	top: 0px;
-	// left:0px;
+	//left:400px;
 	background-color: rgba(255, 255, 255, 0.95);/*couleur du texte*/
 	padding:30px 60px 30px 30px;
 	z-index: 11;
