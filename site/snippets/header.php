@@ -20,5 +20,25 @@
     <div class="header-arrow">
       <a href="#" title="hide menu">←</a>
     </div>
-    <ul class="chemin-menu"><li class="reset">reset</li></ul>
+    <ul class="menu-filtres">
+      <li class="reset">reset</li>
+      <li class="menu-partie">Chemins
+        <ul class="chemin-menu"></ul>
+      </li>
+      <li class="menu-partie">Années
+        <ul class="year-menu button-group" data-filter-group="year">
+          <li class='year-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked' data-filter=''>tous</h4></li>
+        </ul>
+      </li>
+      <li class="menu-partie">Acteurs
+        <ul class="actor-menu button-group" data-filter-group="actor">
+          <li class='actor-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked' data-filter=''>tous</h4></li>
+        </ul>
+      </li>
+      <li class="menu-partie">Discipline
+        <ul class="discipline-menu button-group" data-filter-group="discipline">
+          <li class='discipline-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked' data-filter=''>tous</h4></li>
+        </ul>
+      </li>
+    </ul>
   </header>

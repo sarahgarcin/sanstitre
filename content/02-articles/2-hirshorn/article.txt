@@ -1,4 +1,4 @@
-Title: Rencontre avec Thomas Hirshorn
+Title: Rencontre avec Thomas Hirshhorn
 
 ----
 
@@ -14,4 +14,12 @@ Pour donner forme à vos œuvres, vous proposez à différents d’acteurs (habi
 
 ----
 
-Year: 
+Year: 2014
+
+----
+
+Actor: Thomas Hirshhorn
+
+----
+
+Discipline: Art

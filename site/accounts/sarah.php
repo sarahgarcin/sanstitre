@@ -6,8 +6,10 @@ password: >
   $2a$10$IOxvON85/7/d7/ex5jkToe8WElCxn.f6Ehizf46WHs5JprCGmbpQ2
 language: fr
 role: admin
-token: a44d153a1a87596e6413f0b88fcf7828590b5334
+token: e904bd9fa140aca5f7e366477ee5d3ff09da4570
 history:
+  - articles/paris_clavel
+  - articles/sophie_ricard
+  - articles/hirshorn
+  - articles/ETC
   - null
-  - home
-  - about

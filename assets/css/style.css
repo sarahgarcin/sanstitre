@@ -2385,8 +2385,17 @@ body {
   overflow-y: hidden;
   margin: 0px 30px 0 0; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Karla', sans-serif; }
+
 tr {
   vertical-align: top; }
+
+ul {
+  margin-left: 0px; }
+
+ul li ul {
+  margin-left: 0px; }
 
 li {
   list-style: none; }
@@ -2398,7 +2407,7 @@ li {
   background-color: blue;
   color: #FFF;
   z-index: 99;
-  padding: 20px 10px; }
+  padding: 20px 40px 20px 10px; }
   .header .header-arrow {
     font-size: 35px;
     position: absolute;
@@ -2406,11 +2415,44 @@ li {
     right: 5px; }
     .header .header-arrow a {
       color: #FFF; }
-  .header .chemin-menu li {
-    margin-right: 50px;
-    cursor: pointer; }
-    .header .chemin-menu li.active {
-      color: yellow; }
+  .header .menu-filtres {
+    margin-left: 5px; }
+    .header .menu-filtres > li {
+      border-bottom: 1px solid #FFF;
+      padding: 15px 0; }
+    .header .menu-filtres li {
+      display: block;
+      cursor: pointer; }
+      .header .menu-filtres li h4 {
+        display: inline-block;
+        font-size: 1rem;
+        color: #FFF; }
+      .header .menu-filtres li .chemin-menu .radio-chemin {
+        width: 12px;
+        height: 12px;
+        border-radius: 30px;
+        background-color: #FFF;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle; }
+      .header .menu-filtres li .chemin-menu li.active {
+        color: yellow; }
+        .header .menu-filtres li .chemin-menu li.active .radio-chemin {
+          background-color: yellow; }
+        .header .menu-filtres li .chemin-menu li.active h4 {
+          color: yellow;
+          border-bottom: 1px solid yellow; }
+      .header .menu-filtres li .button-group .checkboxes-menu {
+        width: 12px;
+        height: 12px;
+        background-color: #FFF;
+        display: inline-block;
+        margin-right: 10px; }
+        .header .menu-filtres li .button-group .checkboxes-menu.is-checked {
+          background-color: yellow; }
+      .header .menu-filtres li .button-group h4.is-checked {
+        color: yellow;
+        border-bottom: 1px solid yellow; }
 
 #about {
   display: none;
@@ -2472,6 +2514,11 @@ li {
     #articles .entretien .article-content p {
       font-size: 1.1em;
       line-height: 1.35em; }
+  #articles .entretien .article-footer {
+    padding: 20px 200px 0px 30px;
+    background-color: #FFF;
+    position: fixed;
+    bottom: 0; }
 
 .stabilo {
   background-color: #FFFF00; }

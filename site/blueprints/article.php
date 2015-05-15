@@ -1,19 +1,30 @@
 <?php if(!defined('KIRBY')) exit ?>
 
-title: Project
+title: Article
 pages: false
 files:
   sortable: true
 fields:
   title:
-    label: Title
+    label: Titre
     type:  text
+  actor:
+    label: Acteur(s)
+    type:  text
+    width: 1/2
   year:
-    label: Year
+    label: Année
     type:  text
+    width: 1/2
+  discipline:
+    label: Discipline
+    type: tags
   chapeau:
     label: Chapeau
     type:  wysiwyg
+  pdf:
+    label: PDF
+    type: url
   text:
     label: Texte
     type:  wysiwyg
