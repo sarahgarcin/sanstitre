@@ -157,13 +157,29 @@ $(document).ready(function(){
 		$(this).addClass("entretien" + countArticles);
 	});
 
+// --------- OCCURENCES ---------------
+	//Calcul le nombre d'occurences par chemin
+	$(".entretien").each(function(){
+		var countOcc = 0;
+		var $chem = $(this).find('.chemin');
+		var nbOccurences = $chem.length;
+		$(this).find(".nb-occurence").append(nbOccurences);
+		//add unique id for each occurence in each entretien
+		$chem.each(function(){
+			countOcc ++;
+			$(this).attr('data-occurence', countOcc);
+		});
+	});
+// --------END OCCURENCES ------------
+
 	// When click on one of the chemin menu 
 	$("header ul li.chemin-list").each(function(){
 		$(this).on('click', function(){
-			$(".chemin-list").removeClass('active');
 			$(".chemin").removeClass("stabilo");
 			// Add class active to style it 
 			if($(this).hasClass('active')){
+				console.log('if');
+				$('.occurence').css('display', 'none');
 				$(this).removeClass('active');
 				for(i = 1; i<=nbrEntretien; i++){
 					$(".chemin").removeClass("stabilo");
@@ -172,7 +188,9 @@ $(document).ready(function(){
 				}
 			}
 			else{
+				$(".chemin-list").removeClass('active');
 				$(this).addClass('active');
+				$('.occurence').css('display', 'block'); //display occurences
 				// Go to the right Chemin
 				var ID = $(this).attr('id');
 				var nbID = ID.substring(4, 5);
@@ -183,6 +201,18 @@ $(document).ready(function(){
 						$('.chemin[data-chemin="chemin' + nbID + '"]').addClass("stabilo");
 					}
 				}
+				// Occurences - get the active occurence on chemin click
+				$('.entretien').each(function(){
+					var activeOcc = $(this).find($(".stabilo")).attr('data-occurence');
+					$(this).find(".active-occurence").remove();
+					if(activeOcc!== undefined){
+						$(this).find(".nb-occurence").prepend("<div class='active-occurence'>"+activeOcc+"/</div>");
+					}
+					else{
+						$(this).find(".nb-occurence").prepend("<div class='active-occurence'>0/</div>");
+					}
+				});
+				// end occurence
 			}
 
 		});
@@ -196,6 +226,32 @@ $(document).ready(function(){
 			$('.entretien'  + i +  ' .article-content').scrollTo(0, 800);
 		}
 	});
+
+// OCCURENCES
+	//Go to next occurences on arrow click
+	$('.arrow-occurence').on('click', function(){
+		var $currentEnt = $(this).parents('.entretien');
+		var $currentArt = $currentEnt.find('.article-content');
+		var $nextOcc = $currentEnt.find('.stabilo').nextAll('.chemin').first();
+		if($nextOcc.length){
+			$currentArt.scrollTo($nextOcc,800);
+			$currentArt.children('.chemin').removeClass('stabilo');
+			$nextOcc.addClass('stabilo');
+			var activeOcc = $nextOcc.attr('data-occurence');
+			$(this).next().find(".active-occurence").remove();
+			$(this).next().prepend("<div class='active-occurence'>"+activeOcc+"/</div>");
+		}
+		else{
+			var $firstOcc = $currentArt.find($('.chemin[data-occurence="1"]'));
+			$currentArt.scrollTo($firstOcc,800);
+			$currentArt.children('.chemin').removeClass('stabilo');
+			$firstOcc.addClass('stabilo');
+			var activeOcc = $firstOcc.attr('data-occurence');
+			$(this).next().find(".active-occurence").remove();
+			$(this).next().prepend("<div class='active-occurence'>"+activeOcc+"/</div>");
+		}
+	});
+// END OCCURENCES
 
 
 // -------- COMBINATION FILTERS ---------
@@ -227,6 +283,9 @@ $(document).ready(function(){
 
 // ---------- END FILTERING ---------------
 
+
+// ------------- ABOUT ----------------
+
 	// Position the #about div out of the window
 	var aboutWidth = $("#about").outerWidth();
 	var aTitleHeight = $("#about .about-title").outerHeight();
@@ -252,7 +311,6 @@ $(document).ready(function(){
 
 		if($(".header").hasClass('active')){
 			$(".header").removeClass('active');
-			console.log(headerWidth);
 			$(".header").animate({left:-headerWidth + 40});
 			$("#articles").animate({"margin-left":85});
 		}
@@ -262,6 +320,7 @@ $(document).ready(function(){
 			$("#articles").animate({"margin-left":headerWidth + 40});
 		}
 	});
+// --------------- END ABOUT --------------
 
 	
 	//Custom scrollbar for entretien div

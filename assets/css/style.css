@@ -2502,6 +2502,8 @@ li {
       line-height: 1.2em;
       padding-bottom: 20px;
       font-weight: bold; }
+    #articles .entretien .article-title .occurence {
+      display: none; }
   #articles .entretien .article-content {
     overflow-y: scroll;
     padding: 0px 50px 100px 30px; }
