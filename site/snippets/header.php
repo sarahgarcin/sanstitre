@@ -17,9 +17,7 @@
 <body>
 
   <header class="header cf active" role="banner">
-    <div class="header-arrow">
-      <a href="#" title="hide menu">←</a>
-    </div>
+    <div class="header-arrow" style="cursor:pointer;">←</div>
     <ul class="menu-filtres">
       <li class="reset">reset</li>
       <li class="menu-partie">Chemins

@@ -1,6 +1,8 @@
 <section id="about">
   
-  <div class="about-title"><h1><?php echo $data->title()->html() ?></h1> </div>
+  <div class="about-title">
+  	<h1><?php echo $data->title()->html() ?></h1>
+  </div>
   <div class="about-colophon columnize">
   	<?php echo $data->colophon()->kirbytext() ?>
   </div>

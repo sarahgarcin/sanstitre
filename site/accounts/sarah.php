@@ -6,10 +6,11 @@ password: >
   $2a$10$IOxvON85/7/d7/ex5jkToe8WElCxn.f6Ehizf46WHs5JprCGmbpQ2
 language: fr
 role: admin
-token: e904bd9fa140aca5f7e366477ee5d3ff09da4570
+token: 50d0ba7c60758bdace7d28baa46414834e4805b2
 history:
+  - articles/ETC
+  - articles/test
+  - >
+    articles/rencontre-avec-gerard-paris-clavel
   - articles/paris_clavel
   - articles/sophie_ricard
-  - articles/hirshorn
-  - articles/ETC
-  - null

@@ -15,7 +15,7 @@ kirbytext::$tags['chemin'] = array(
     $chemin = $tag->attr('chemin');
     $text    = $tag->attr('text', $chemin);
     // return '<a href="' . $url . '/' . $article . '">' . $text . '</a>';
-    return '<div class="chemin" data-chemin="'.$chemin . '"data-name="'.$text.'">';
+    return '<div class="chemin '.$chemin.'" data-chemin="'.$chemin . '"data-name="'.$text.'">';
 
   }
 );

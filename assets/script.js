@@ -148,7 +148,7 @@ $(document).ready(function(){
 	// display the different chemin as list menu
 	for(i=0; i<nbChemin; i++){
 		count = i+1;
-		$("header .chemin-menu").append("<li class='chemin-list' id='chem" + count + "'><div class='radio-chemin'></div><h4>" + chemins[i] + "</h4></li>")
+		$("header .chemin-menu").append("<li class='chemin-list' id='chem" + count + "' data-filter='."+ chemins[i]+"'><div class='radio-chemin'></div><h4>" + chemins[i] + "</h4></li>")
 	}
 
 	// Add specific class to each "entretien"
@@ -163,7 +163,7 @@ $(document).ready(function(){
 		var countOcc = 0;
 		var $chem = $(this).find('.chemin');
 		var nbOccurences = $chem.length;
-		$(this).find(".nb-occurence").append(nbOccurences);
+		$(this).find(".nb-occurence").append("<div class=total-occurences>" + nbOccurences +"</div");
 		//add unique id for each occurence in each entretien
 		$chem.each(function(){
 			countOcc ++;
@@ -178,7 +178,6 @@ $(document).ready(function(){
 			$(".chemin").removeClass("stabilo");
 			// Add class active to style it 
 			if($(this).hasClass('active')){
-				console.log('if');
 				$('.occurence').css('display', 'none');
 				$(this).removeClass('active');
 				for(i = 1; i<=nbrEntretien; i++){
@@ -224,6 +223,7 @@ $(document).ready(function(){
 			$(".chemin").removeClass("stabilo");
 			$("header ul li.chemin-list").removeClass('active');
 			$('.entretien'  + i +  ' .article-content').scrollTo(0, 800);
+			$('.occurence').css('display', 'none');
 		}
 	});
 
@@ -275,11 +275,26 @@ $(document).ready(function(){
 	    // init Isotope
 	  var $container = $('#articles').isotope({
 	    itemSelector: '.entretien',
-	    transitionDuration: 0
+	    transitionDuration: 0,
+	    layoutMode: 'horizontal'
 	  });
 	  // set filter for Isotope
 	  $container.isotope({ filter: filterValue });
 	});
+
+	//FILTER CHEMINS 
+	// $(".menu-filtres .chemin-list").on('click', function(){
+	// 	// init Isotope
+	//   var $container = $('#articles').isotope({
+	//     itemSelector: '.chemin',
+	//     transitionDuration: 0,
+	//     layoutMode: 'horizontal'
+	//   });
+	//   var filterValue = $(this).attr('data-filter');
+ //  	$container.isotope({ filter: filterValue });
+	// });
+
+
 
 // ---------- END FILTERING ---------------
 
@@ -332,20 +347,23 @@ $(document).ready(function(){
 	                                         
 	//Calcul la hauteur des div des articles
 	function HauteurLargeur(){
-		var titleHeight =  $(".entretien .article-title").outerHeight(true);
-		var articleHeight = winHeight - titleHeight;
-		$(".entretien .article-content").css("height", articleHeight);
-		$(".header").css("height", winHeight);
+		$(window).load(function(){
+			var titleHeight =  $(".entretien .article-title").outerHeight();
+			var footerHeight = $(".entretien .article-footer").outerHeight();
+			var articleHeight = winHeight - (titleHeight+footerHeight);
+			$(".entretien .article-content").css("height", articleHeight - 42);
+			$(".header").css("height", winHeight);
 
-		//Calcule la largeur des articles (pour qu'il y ait 4 articles dans la fenêtres)
-		var articleWidth = winWidth / 4;
-		$(".entretien").css("width", articleWidth);
-		$(".article-title").css("width", articleWidth-50);
-		var headerWidth = articleWidth/2;
-		$(".header").css("width", headerWidth);
+			//Calcule la largeur des articles (pour qu'il y ait 4 articles dans la fenêtres)
+			var articleWidth = winWidth / 4;
+			$(".entretien").css("width", articleWidth);
+			$(".article-title").css("width", articleWidth-50);
+			var headerWidth = articleWidth/2;
+			$(".header").css("width", headerWidth);
 
-		//Calcule la marge de gauche pour les articles
-		$("#articles").css("margin-left", headerWidth + 40);
+			//Calcule la marge de gauche pour les articles
+			$("#articles").css("margin-left", headerWidth + 40);
+		});
 	}
 
 

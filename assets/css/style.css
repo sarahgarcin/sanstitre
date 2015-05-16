@@ -2495,7 +2495,8 @@ li {
   position: relative; }
   #articles .entretien .article-title {
     padding: 20px 200px 0px 30px;
-    background-color: #FFF; }
+    background-color: #FFF;
+    position: relative; }
     #articles .entretien .article-title h1 {
       font-family: 'Karla', sans-serif;
       font-size: 1.8em;
@@ -2503,7 +2504,15 @@ li {
       padding-bottom: 20px;
       font-weight: bold; }
     #articles .entretien .article-title .occurence {
-      display: none; }
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 0px;
+      font-size: 1.2rem; }
+      #articles .entretien .article-title .occurence > div {
+        display: inline-block; }
+        #articles .entretien .article-title .occurence > div > div {
+          display: inline-block; }
   #articles .entretien .article-content {
     overflow-y: scroll;
     padding: 0px 50px 100px 30px; }
@@ -2513,14 +2522,26 @@ li {
       line-height: 1.2em;
       font-weight: bold;
       margin-bottom: 30px; }
-    #articles .entretien .article-content p {
+    #articles .entretien .article-content h5 {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 20px; }
+    #articles .entretien .article-content h6 {
+      font-size: 1.1em;
+      font-weight: bold;
+      padding-left: 20px;
+      margin-bottom: 0px; }
+    #articles .entretien .article-content p, #articles .entretien .article-content div {
       font-size: 1.1em;
       line-height: 1.35em; }
   #articles .entretien .article-footer {
     padding: 20px 200px 0px 30px;
     background-color: #FFF;
-    position: fixed;
-    bottom: 0; }
+    position: absolute; }
+    #articles .entretien .article-footer h4 {
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: underline; }
 
 .stabilo {
   background-color: #FFFF00; }

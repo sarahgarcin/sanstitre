@@ -36,6 +36,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*) index.php [L]
 
 </IfModule>
+SetEnv PHP_VER 5_4
 
 # Additional recommended values
 # Remove comments for those you want to use.

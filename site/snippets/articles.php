@@ -22,7 +22,7 @@
           <?php echo $project->text()->kirbytext()?>
         </div>
         <div class="article-footer">
-          <a href="<?php echo $project->pdf() ?>" title="pdf"><h4>télécharger</h4></a>
+          <a href="<?php echo $project->pdf() ?>" title="pdf" target="_blank"><h4>télécharger</h4></a>
         </div>
       </article>
     <?php endforeach ?>
