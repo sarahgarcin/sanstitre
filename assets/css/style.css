@@ -2435,11 +2435,27 @@ li {
         display: inline-block;
         font-size: 1rem;
         color: #FFF; }
+      .header .menu-filtres li .chemin-name {
+        display: none;
+        position: relative; }
+        .header .menu-filtres li .chemin-name h5 {
+          position: absolute;
+          top: -50px;
+          left: 100px;
+          background-color: #FFF;
+          padding: 10px;
+          color: blue;
+          font-size: 1rem; }
       @media only screen and (min-width: 64.063em) and (max-width: 90em) {
         .header .menu-filtres li h3, .header .menu-filtres li h4 {
           font-size: 0.8em;
           line-height: 1.2em;
-          margin-bottom: 2px; } }
+          margin-bottom: 2px; }
+        .header .menu-filtres li .chemin-name h5 {
+          font-size: 0.8em;
+          padding: 5px;
+          top: -35px;
+          left: 70px; } }
       .header .menu-filtres li .chemin-menu .radio-chemin {
         width: 12px;
         height: 12px;
@@ -2453,11 +2469,11 @@ li {
           width: 8px;
           height: 8px;
           margin-right: 5px; } }
-      .header .menu-filtres li .chemin-menu li.active {
+      .header .menu-filtres li .chemin-menu li.active, .header .menu-filtres li .chemin-menu li:hover {
         color: yellow; }
-        .header .menu-filtres li .chemin-menu li.active .radio-chemin {
+        .header .menu-filtres li .chemin-menu li.active .radio-chemin, .header .menu-filtres li .chemin-menu li:hover .radio-chemin {
           background-color: yellow; }
-        .header .menu-filtres li .chemin-menu li.active h4 {
+        .header .menu-filtres li .chemin-menu li.active h4, .header .menu-filtres li .chemin-menu li:hover h4 {
           color: yellow;
           border-bottom: 1px solid yellow; }
       .header .menu-filtres li .button-group h4:before {

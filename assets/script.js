@@ -121,6 +121,7 @@ $(document).ready(function(){
 
 	var divChemin = $(".entretien .article-content").children('.chemin');
 	var unique_chemins = {};
+	var unique_name = {};
 	var chemins = [];
 
 	divChemin.each(function(){
@@ -128,27 +129,41 @@ $(document).ready(function(){
 		var nameChemin = $(this).attr('data-name');
 
 		//Check if value are duplicate
-		if ( ! unique_chemins[nbChemin] ) {
+		if ( ! unique_chemins[nbChemin] && ! unique_name[nameChemin] ) {
       unique_chemins[nbChemin] = true;
-      chemins.push(nbChemin); 
+      unique_name[nameChemin] = true;
+      //chemins[nbChemin] = nameChemin;
+      //chemins['chemins'] = nbChemin;
+      //chemins.push(nbChemin);
+      chemins.push({chemin: nbChemin, name: nameChemin});
     } 
     else {
        // We have duplicate values!
     }	
 		
 	});
+	
+	chemins.sort(function(a,b){
+		var sortChemA = a.chemin.substring(6);
+		var sortChemB = b.chemin.substring(6);
+		return sortChemA - sortChemB;
+	});
 
-	chemins.sort();
 
 	//count the number of entretien and of chemin
 	var nbrEntretien = $(".entretien").length;
 	var nbChemin = chemins.length; 
 	
 	// display the different chemin as list menu
-	for(i=0; i<nbChemin; i++){
-		count = i+1;
-		$("header .chemin-menu").append("<li class='chemin-list' id='chem" + count + "' data-filter='."+ chemins[i]+"'><div class='radio-chemin'></div><h4>" + chemins[i] + "</h4></li>")
+	var count =0;
+	for(var key in chemins){
+		count ++;
+		$("header .chemin-menu").append("<li class='chemin-list' id='chem" + count + "' data-filter='."+ chemins[key]['chemin']+"'><div class='radio-chemin'></div><h4>" + chemins[key]['chemin'] + "</h4><div class='chemin-name'><h5>"+chemins[key]['name']+"</h5></div></li>")
 	}
+	// for(i=0; i<nbChemin; i++){
+	// 	count = i+1;
+	// 	$("header .chemin-menu").append("<li class='chemin-list' id='chem" + count + "' data-filter='."+ chemins[i]+"'><div class='radio-chemin'></div><h4>" + chemins[i] + "</h4></li>")
+	// }
 
 	// Add specific class to each "entretien"
 	$(".entretien").each(function(){
@@ -170,6 +185,15 @@ $(document).ready(function(){
 		});
 	});
 // --------END OCCURENCES ------------
+
+// ---- CHEMINS -------------
+	//HOVER CHEMIN
+	$(".chemin-list").mouseenter(function(){
+		$(this).find('.chemin-name').css("display", "block");
+	});
+	$(".chemin-list").mouseleave(function(){
+		$(this).find('.chemin-name').css("display", "none");
+	});
 
 	// When click on one of the chemin menu 
 	$("header ul li.chemin-list").each(function(){

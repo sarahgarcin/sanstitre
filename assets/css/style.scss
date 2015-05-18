@@ -83,7 +83,23 @@ li {
 				font-size: 1rem;
 				color: #FFF;
 			} 
-			@media #{$large-only} { h3,h4{font-size: 0.8em; line-height: 1.2em; margin-bottom: 2px;}}
+			.chemin-name{
+				display:none;
+				position: relative;
+				h5{
+					position: absolute;
+					top: -50px;
+					left: 100px;
+					background-color: #FFF;
+					padding: 10px;
+					color:blue;
+					font-size: 1rem;
+				}
+			}
+			@media #{$large-only} { 
+				h3,h4{font-size: 0.8em; line-height: 1.2em; margin-bottom: 2px;}
+				.chemin-name h5{font-size:0.8em; padding: 5px; top:-35px; left: 70px;}
+			}
 			.chemin-menu{
 				.radio-chemin{
 					width:12px;
@@ -95,7 +111,7 @@ li {
 					vertical-align: middle;
 				}
 				@media #{$large-only} { .radio-chemin{width:8px; height:8px;margin-right: 5px;} }
-				li.active{
+				li.active, li:hover{
 					color: yellow;
 					.radio-chemin{
 						background-color: yellow;
