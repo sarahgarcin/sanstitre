@@ -20,13 +20,14 @@
   <header class="header cf active" role="banner">
     <div class="header-arrow" style="cursor:pointer;">←</div>
     <ul class="menu-filtres">
-      <li class="reset"><h3>reset</h3></li>
+      <li class="reset"><h3>Reset</h3></li>
       <li class="menu-partie"><h3>Chemins</h3>
         <ul class="chemin-menu"></ul>
       </li>
       <li class="menu-partie"><h3>Années</h3>
         <ul class="year-menu button-group" data-filter-group="year">
-          <li class='year-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked tous' data-filter=''>tous</h4></li>
+          <li class='year-list'><div class='checkboxes-menu is-checked'></div>
+          <h4 class='bouton is-checked tous' data-filter=''>toutes</h4></li>
         </ul>
       </li>
       <li class="menu-partie"><h3>Acteurs</h3>

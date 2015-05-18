@@ -158,7 +158,7 @@ $(document).ready(function(){
 	var count =0;
 	for(var key in chemins){
 		count ++;
-		$("header .chemin-menu").append("<li class='chemin-list' id='chem" + count + "' data-filter='."+ chemins[key]['chemin']+"'><div class='radio-chemin'></div><h4>" + chemins[key]['chemin'] + "</h4><div class='chemin-name'><h5>"+chemins[key]['name']+"</h5></div></li>")
+		$("header .chemin-menu").append("<li class='chemin-list' id='chem" + count + "' data-filter='."+ chemins[key]['chemin']+"'><div class='radio-chemin'></div><h4>" + chemins[key]['name'] + "</h4><div class='chemin-name'><h5>"+chemins[key]['name']+"</h5></div></li>")
 	}
 	// for(i=0; i<nbChemin; i++){
 	// 	count = i+1;
@@ -188,12 +188,12 @@ $(document).ready(function(){
 
 // ---- CHEMINS -------------
 	//HOVER CHEMIN
-	$(".chemin-list").mouseenter(function(){
-		$(this).find('.chemin-name').css("display", "block");
-	});
-	$(".chemin-list").mouseleave(function(){
-		$(this).find('.chemin-name').css("display", "none");
-	});
+	// $(".chemin-list").mouseenter(function(){
+	// 	$(this).find('.chemin-name').css("display", "block");
+	// });
+	// $(".chemin-list").mouseleave(function(){
+	// 	$(this).find('.chemin-name').css("display", "none");
+	// });
 
 	// When click on one of the chemin menu 
 	$("header ul li.chemin-list").each(function(){
