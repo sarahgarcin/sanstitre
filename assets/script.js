@@ -358,8 +358,8 @@ $(document).ready(function(){
 
 		if($(".header").hasClass('active')){
 			$(".header").removeClass('active');
-			$(".header").animate({left:-headerWidth + paddingRight - 20});
-			$("#articles").animate({"margin-left":paddingRight + 20});
+			$(".header").animate({left:-headerWidth + paddingRight - 10});
+			$("#articles").animate({"margin-left":paddingRight + 30});
 		}
 		else{
 			$(".header").addClass('active');
