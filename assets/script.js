@@ -5,13 +5,15 @@ $(document).ready(function(){
 	// ((,' (( ( ((`\ (( (( ( ((__)((__((_  
 	                                     
 	var countArticles = 0;
-	var winHeight = $(window).height();
-	var winWidth = $(window).width() - 60;
-	var headerHeight = $('header').outerHeight();
-	var headerWidth = $('.header').width();
+		var winHeight = $(window).height();
+		var winWidth = $(window).width() - 60;
+		var headerHeight = $('header').outerHeight();
+		var headerWidth = $('.header').width();
 
 	//init fonction
-	HauteurLargeur();
+	$(window).load(function(){
+		HauteurLargeur();
+	});
 
 	$(window).resize(function(){
 		HauteurLargeur();
@@ -189,7 +191,7 @@ $(document).ready(function(){
 			else{
 				$(".chemin-list").removeClass('active');
 				$(this).addClass('active');
-				$('.occurence').css('display', 'block'); //display occurences
+				$('.occurence').css('display', 'inline-block'); //display occurences
 				// Go to the right Chemin
 				var ID = $(this).attr('id');
 				var nbID = ID.substring(4, 5);
@@ -224,6 +226,11 @@ $(document).ready(function(){
 			$("header ul li.chemin-list").removeClass('active');
 			$('.entretien'  + i +  ' .article-content').scrollTo(0, 800);
 			$('.occurence').css('display', 'none');
+    	$('#articles').isotope({
+	        filter: '*'
+	    });
+	    $(".menu-filtres").find('.is-checked').removeClass('is-checked');
+	    $(".menu-filtres").find(".tous").addClass('is-checked');
 		}
 	});
 
@@ -318,28 +325,37 @@ $(document).ready(function(){
 			$(this).animate( { left: "-=" + aboutLeft});
 		}
 	});
+// --------------- END ABOUT --------------
+
+// --------------- HEADER ------------
 
 	// When click on arrow header, animate header to left and hide it
 	$(".header-arrow").on('click', function(){
 		var headerHeight = $('header').outerHeight();
 		var headerWidth = $('.header').outerWidth();
+		var paddingRight = $('.header-arrow').width() + $('.about-title').height();
 
 		if($(".header").hasClass('active')){
 			$(".header").removeClass('active');
-			$(".header").animate({left:-headerWidth + 40});
+			$(".header").animate({left:-headerWidth + paddingRight - 15});
 			$("#articles").animate({"margin-left":85});
 		}
 		else{
 			$(".header").addClass('active');
 			$(".header").animate({left:0});
-			$("#articles").animate({"margin-left":headerWidth + 40});
+			$("#articles").animate({"margin-left":headerWidth + paddingRight});
 		}
 	});
-// --------------- END ABOUT --------------
+
+	//Toogle menu filtres
+	$(".menu-filtres h3").on('click', function(){
+		$(this).parent('li').children('ul').toggle('fast');
+
+	});
 
 	
 	//Custom scrollbar for entretien div
-	// $('.entretien').jScrollPane();
+	//$('.entretien .article-content').jScrollPane();
 
 	//  ___            __  ___    __        __  
 	// |__  |  | |\ | /  `  |  | /  \ |\ | /__` 
@@ -347,7 +363,6 @@ $(document).ready(function(){
 	                                         
 	//Calcul la hauteur des div des articles
 	function HauteurLargeur(){
-		$(window).load(function(){
 			var titleHeight =  $(".entretien .article-title").outerHeight();
 			var footerHeight = $(".entretien .article-footer").outerHeight();
 			var articleHeight = winHeight - (titleHeight+footerHeight);
@@ -357,13 +372,12 @@ $(document).ready(function(){
 			//Calcule la largeur des articles (pour qu'il y ait 4 articles dans la fenêtres)
 			var articleWidth = winWidth / 4;
 			$(".entretien").css("width", articleWidth);
-			$(".article-title").css("width", articleWidth-50);
+			$(".article-title").css("width", articleWidth);
 			var headerWidth = articleWidth/2;
 			$(".header").css("width", headerWidth);
 
 			//Calcule la marge de gauche pour les articles
 			$("#articles").css("margin-left", headerWidth + 40);
-		});
 	}
 
 

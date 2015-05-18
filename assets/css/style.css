@@ -2408,12 +2408,16 @@ li {
   color: #FFF;
   z-index: 10;
   padding: 20px 40px 20px 10px;
-  margin-left: 40px; }
+  margin-left: 40px;
+  overflow-y: scroll; }
   .header .header-arrow {
     font-size: 35px;
     position: absolute;
-    top: -15px;
+    top: 0px;
     right: 5px; }
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      .header .header-arrow {
+        font-size: 15px; } }
     .header .header-arrow a {
       color: #FFF; }
   .header .menu-filtres {
@@ -2424,10 +2428,18 @@ li {
     .header .menu-filtres li {
       display: block;
       cursor: pointer; }
+      .header .menu-filtres li h3 {
+        font-size: 1rem;
+        color: #FFF; }
       .header .menu-filtres li h4 {
         display: inline-block;
         font-size: 1rem;
         color: #FFF; }
+      @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+        .header .menu-filtres li h3, .header .menu-filtres li h4 {
+          font-size: 0.8em;
+          line-height: 1.1em;
+          margin-bottom: 2px; } }
       .header .menu-filtres li .chemin-menu .radio-chemin {
         width: 12px;
         height: 12px;
@@ -2436,6 +2448,11 @@ li {
         display: inline-block;
         margin-right: 10px;
         vertical-align: middle; }
+      @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+        .header .menu-filtres li .chemin-menu .radio-chemin {
+          width: 8px;
+          height: 8px;
+          margin-right: 5px; } }
       .header .menu-filtres li .chemin-menu li.active {
         color: yellow; }
         .header .menu-filtres li .chemin-menu li.active .radio-chemin {
@@ -2454,6 +2471,11 @@ li {
       .header .menu-filtres li .button-group h4.is-checked {
         color: yellow;
         border-bottom: 1px solid yellow; }
+      @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+        .header .menu-filtres li .button-group .checkboxes-menu {
+          width: 8px;
+          height: 8px;
+          margin-right: 5px; } }
 
 #about {
   color: blue;
@@ -2476,6 +2498,9 @@ li {
     font-size: 1.25em;
     font-weight: bold;
     padding-left: 30px; }
+  @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+    #about p, #about h1, #about h2, #about h3 {
+      font-size: 0.9em; } }
   #about .about-title {
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
@@ -2486,6 +2511,9 @@ li {
     #about .about-title h1 {
       font-size: 1.6em;
       margin: 0; }
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      #about .about-title h1 {
+        font-size: 1.2em; } }
   #about .columnize {
     width: 47%;
     display: inline-block;
@@ -2494,28 +2522,24 @@ li {
 #articles .entretien {
   position: relative; }
   #articles .entretien .article-title {
-    padding: 20px 200px 0px 30px;
+    padding: 20px 100px 0px 30px;
     background-color: #FFF;
     position: relative; }
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      #articles .entretien .article-title {
+        min-width: 350px; } }
     #articles .entretien .article-title h1 {
       font-family: 'Karla', sans-serif;
       font-size: 1.8em;
       line-height: 1.2em;
       padding-bottom: 20px;
       font-weight: bold; }
-    #articles .entretien .article-title .occurence {
-      display: none;
-      position: absolute;
-      top: 20px;
-      right: 0px;
-      font-size: 1.2rem; }
-      #articles .entretien .article-title .occurence > div {
-        display: inline-block; }
-        #articles .entretien .article-title .occurence > div > div {
-          display: inline-block; }
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      #articles .entretien .article-title h1 {
+        font-size: 1.3em; } }
   #articles .entretien .article-content {
     overflow-y: scroll;
-    padding: 0px 50px 100px 30px; }
+    padding: 0px 30px 100px 30px; }
     #articles .entretien .article-content h2 {
       font-family: 'Karla', sans-serif;
       font-size: 1.25em;
@@ -2529,19 +2553,47 @@ li {
     #articles .entretien .article-content h6 {
       font-size: 1.1em;
       font-weight: bold;
-      padding-left: 20px;
+      padding-left: 30px;
       margin-bottom: 0px; }
     #articles .entretien .article-content p, #articles .entretien .article-content div {
       font-size: 1.1em;
-      line-height: 1.35em; }
+      line-height: 1.22em; }
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      #articles .entretien .article-content h2 {
+        font-size: 0.95em; }
+      #articles .entretien .article-content h5, #articles .entretien .article-content h6, #articles .entretien .article-content p, #articles .entretien .article-content div {
+        font-size: 0.88em;
+        line-height: 1.3em; } }
+  @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+    #articles .entretien .occurence {
+      font-size: 0.88em;
+      line-height: 1.3em; } }
   #articles .entretien .article-footer {
-    padding: 20px 200px 0px 30px;
+    padding: 20px 200px 20px 30px;
     background-color: #FFF;
-    position: absolute; }
+    position: relative; }
     #articles .entretien .article-footer h4 {
       font-size: 1rem;
       font-weight: bold;
-      text-decoration: underline; }
+      text-decoration: underline;
+      display: inline-block; }
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      #articles .entretien .article-footer h4 {
+        font-size: 0.8em; } }
+    #articles .entretien .article-footer .occurence {
+      display: none;
+      font-size: 1.2rem;
+      position: absolute;
+      right: 20px; }
+      #articles .entretien .article-footer .occurence .arrow-occurence:hover {
+        color: yellow; }
+      #articles .entretien .article-footer .occurence > div {
+        display: inline-block; }
+        #articles .entretien .article-footer .occurence > div > div {
+          display: inline-block; }
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      #articles .entretien .article-footer .occurence {
+        font-size: 0.8em; } }
 
 .stabilo {
   background-color: #FFFF00; }

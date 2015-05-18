@@ -19,23 +19,23 @@
   <header class="header cf active" role="banner">
     <div class="header-arrow" style="cursor:pointer;">←</div>
     <ul class="menu-filtres">
-      <li class="reset">reset</li>
-      <li class="menu-partie">Chemins
+      <li class="reset"><h3>reset</h3></li>
+      <li class="menu-partie"><h3>Chemins</h3>
         <ul class="chemin-menu"></ul>
       </li>
-      <li class="menu-partie">Années
+      <li class="menu-partie"><h3>Années</h3>
         <ul class="year-menu button-group" data-filter-group="year">
-          <li class='year-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked' data-filter=''>tous</h4></li>
+          <li class='year-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked tous' data-filter=''>tous</h4></li>
         </ul>
       </li>
-      <li class="menu-partie">Acteurs
+      <li class="menu-partie"><h3>Acteurs</h3>
         <ul class="actor-menu button-group" data-filter-group="actor">
-          <li class='actor-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked' data-filter=''>tous</h4></li>
+          <li class='actor-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked tous' data-filter=''>tous</h4></li>
         </ul>
       </li>
-      <li class="menu-partie">Discipline
+      <li class="menu-partie"><h3>Discipline</h3>
         <ul class="discipline-menu button-group" data-filter-group="discipline">
-          <li class='discipline-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked' data-filter=''>tous</h4></li>
+          <li class='discipline-list'><div class='checkboxes-menu is-checked'></div><h4 class='bouton is-checked tous' data-filter=''>tous</h4></li>
         </ul>
       </li>
     </ul>

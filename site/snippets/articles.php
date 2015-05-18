@@ -12,10 +12,6 @@
       <article class="entretien <?php echo $actor ?> <?php echo $project->year() ?> <?php echo $discipline ?>" data-actor="<?php echo $project->actor() ?>" data-year="<?php echo $project->year() ?>" data-discipline="<?php echo $project->discipline() ?>">
         <div class="article-title">
           <h1><?php echo $project->title()->html()?></h1>
-          <div class="occurence">
-            <div class="arrow-occurence" style="cursor:pointer;">►</div>
-            <div class="nb-occurence"></div>
-          </div>
         </div>
          <div class="article-content">
           <h2><?php echo $project->chapeau()->html()?></h2>
@@ -23,6 +19,10 @@
         </div>
         <div class="article-footer">
           <a href="<?php echo $project->pdf() ?>" title="pdf" target="_blank"><h4>télécharger</h4></a>
+          <div class="occurence">
+            <div class="arrow-occurence" style="cursor:pointer;">►</div>
+            <div class="nb-occurence"></div>
+          </div>
         </div>
       </article>
     <?php endforeach ?>
