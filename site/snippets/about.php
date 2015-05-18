@@ -1,4 +1,4 @@
-<section id="about">
+<section id="about" class="active">
   
   <div class="about-title">
   	<h1><?php echo $data->title()->html() ?></h1>

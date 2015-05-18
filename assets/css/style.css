@@ -2403,7 +2403,7 @@ li {
 .header {
   position: fixed;
   border: none;
-  min-width: 170px;
+  min-width: 150px;
   background-color: blue;
   color: #FFF;
   z-index: 10;
@@ -2438,7 +2438,7 @@ li {
       @media only screen and (min-width: 64.063em) and (max-width: 90em) {
         .header .menu-filtres li h3, .header .menu-filtres li h4 {
           font-size: 0.8em;
-          line-height: 1.1em;
+          line-height: 1.2em;
           margin-bottom: 2px; } }
       .header .menu-filtres li .chemin-menu .radio-chemin {
         width: 12px;
@@ -2460,22 +2460,23 @@ li {
         .header .menu-filtres li .chemin-menu li.active h4 {
           color: yellow;
           border-bottom: 1px solid yellow; }
-      .header .menu-filtres li .button-group .checkboxes-menu {
+      .header .menu-filtres li .button-group h4:before {
+        content: '';
         width: 12px;
         height: 12px;
         background-color: #FFF;
         display: inline-block;
         margin-right: 10px; }
-        .header .menu-filtres li .button-group .checkboxes-menu.is-checked {
-          background-color: yellow; }
-      .header .menu-filtres li .button-group h4.is-checked {
-        color: yellow;
-        border-bottom: 1px solid yellow; }
       @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-        .header .menu-filtres li .button-group .checkboxes-menu {
+        .header .menu-filtres li .button-group h4:before {
           width: 8px;
           height: 8px;
-          margin-right: 5px; } }
+          margin-right: 7px; } }
+      .header .menu-filtres li .button-group h4.is-checked:before {
+        background-color: yellow; }
+      .header .menu-filtres li .button-group h4.is-checked {
+        color: yellow;
+        text-decoration: underline; }
 
 #about {
   color: blue;
@@ -2483,6 +2484,7 @@ li {
   width: 40%;
   height: 100%;
   top: 0px;
+  left: 0px;
   background-color: rgba(255, 255, 255, 0.95);
   /*couleur du texte*/
   padding: 30px 60px 30px 30px;
@@ -2506,8 +2508,8 @@ li {
     -moz-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
     position: absolute;
-    top: 135px;
-    right: -40px; }
+    top: 45px;
+    right: -35px; }
     #about .about-title h1 {
       font-size: 1.6em;
       margin: 0; }
@@ -2525,7 +2527,7 @@ li {
 #articles .entretien {
   position: relative; }
   #articles .entretien .article-title {
-    padding: 20px 100px 0px 30px;
+    padding: 20px 100px 0px 20px;
     background-color: #FFF;
     position: relative; }
     @media only screen and (min-width: 64.063em) and (max-width: 90em) {

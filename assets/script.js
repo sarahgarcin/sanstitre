@@ -5,10 +5,8 @@ $(document).ready(function(){
 	// ((,' (( ( ((`\ (( (( ( ((__)((__((_  
 	                                     
 	var countArticles = 0;
-		var winHeight = $(window).height();
-		var winWidth = $(window).width() - 60;
-		var headerHeight = $('header').outerHeight();
-		var headerWidth = $('.header').width();
+	var headerHeight = $('header').outerHeight();
+	var headerWidth = $('.header').width();
 
 	//init fonction
 	$(window).load(function(){
@@ -90,21 +88,21 @@ $(document).ready(function(){
 
 	//Create Year Menu
 	for(i=0; i<year.length; i++){
-		$("header .year-menu").append("<li class='year-list'><div class='checkboxes-menu'></div><h4 class='bouton' data-filter='."+year[i]+"'>"+year[i]+"</h4></li>")
+		$("header .year-menu").append("<li class='year-list'><h4 class='bouton' data-filter='."+year[i]+"'>"+year[i]+"</h4></li>")
 	}
 
 	//Create Actor Menu
 	for(i=0; i<actor.length; i++){
 		var actorFormat =  actor[i].toLowerCase().replace(" ", "");
 		var actorFormat = actorFormat.sansAccent();
-		$("header .actor-menu").append("<li class='actor-list'><div class='checkboxes-menu'></div><h4 class='bouton' data-filter='."+actorFormat+"'>"+actor[i]+"</h4></li>")
+		$("header .actor-menu").append("<li class='actor-list'><h4 class='bouton' data-filter='."+actorFormat+"'>"+actor[i]+"</h4></li>")
 	}
 
 	//Create Discipline Menu
 	for(i=0; i<discipline.length; i++){
 		var disciplineFormat =  discipline[i].toLowerCase().replace(" ", "");
 		var disciplineFormat = disciplineFormat.sansAccent();
-		$("header .discipline-menu").append("<li class='discipline-list'><div class='checkboxes-menu'></div><h4 class='bouton' data-filter='."+disciplineFormat+"'>"+discipline[i]+"</h4></li>")
+		$("header .discipline-menu").append("<li class='discipline-list'><h4 class='bouton' data-filter='."+disciplineFormat+"'>"+discipline[i]+"</h4></li>")
 	}
 
 	//Checked button
@@ -113,7 +111,6 @@ $(document).ready(function(){
     $buttonGroup.on( 'click', 'h4', function() {
       $buttonGroup.find('.is-checked').removeClass('is-checked');
       $( this ).addClass('is-checked');
-      $(this).prev('.checkboxes-menu').addClass('is-checked');
     });
   });
 
@@ -312,7 +309,7 @@ $(document).ready(function(){
 	var aboutWidth = $("#about").outerWidth();
 	var aTitleHeight = $("#about .about-title").outerHeight();
 	var aboutLeft = -aboutWidth + aTitleHeight + 5;
-	$("#about").css("left", aboutLeft);
+	//$("#about").css("left", aboutLeft);
 
 	//Click on a propos - Animate 
 	$("#about").on('click', function(){	
@@ -337,13 +334,13 @@ $(document).ready(function(){
 
 		if($(".header").hasClass('active')){
 			$(".header").removeClass('active');
-			$(".header").animate({left:-headerWidth + paddingRight - 15});
-			$("#articles").animate({"margin-left":85});
+			$(".header").animate({left:-headerWidth + paddingRight - 20});
+			$("#articles").animate({"margin-left":paddingRight + 20});
 		}
 		else{
 			$(".header").addClass('active');
 			$(".header").animate({left:0});
-			$("#articles").animate({"margin-left":headerWidth + paddingRight -15});
+			$("#articles").animate({"margin-left":headerWidth + paddingRight});
 		}
 	});
 
@@ -365,6 +362,8 @@ $(document).ready(function(){
 	                                         
 	//Calcul la hauteur des div des articles
 	function HauteurLargeur(){
+			var winHeight = $(window).height();
+			var winWidth = $(window).width();
 			var titleHeight =  $(".entretien .article-title").outerHeight();
 			var footerHeight = $(".entretien .article-footer").outerHeight();
 			var articleHeight = winHeight - (titleHeight+footerHeight);
@@ -375,11 +374,11 @@ $(document).ready(function(){
 			var articleWidth = winWidth / 4;
 			$(".entretien").css("width", articleWidth);
 			$(".article-title").css("width", articleWidth);
-			var headerWidth = articleWidth/2;
-			$(".header").css("width", headerWidth);
+			var headerW = articleWidth/2;
+			$(".header").css("width", headerW);
 
 			//Calcule la marge de gauche pour les articles
-			$("#articles").css("margin-left", headerWidth + $('.about-title').height() + 20);
+			$("#articles").css("margin-left", headerW + $('.about-title').height() + 15);
 	}
 
 
