@@ -2403,7 +2403,7 @@ li {
 .header {
   position: fixed;
   border: none;
-  min-width: 50px;
+  min-width: 170px;
   background-color: blue;
   color: #FFF;
   z-index: 10;
@@ -2480,7 +2480,7 @@ li {
 #about {
   color: blue;
   position: fixed;
-  width: 38%;
+  width: 40%;
   height: 100%;
   top: 0px;
   background-color: rgba(255, 255, 255, 0.95);
@@ -2519,6 +2519,9 @@ li {
     display: inline-block;
     vertical-align: top; }
 
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  #about {
+    padding: 30px 40px 30px 30px; } }
 #articles .entretien {
   position: relative; }
   #articles .entretien .article-title {
@@ -2539,7 +2542,7 @@ li {
         font-size: 1.3em; } }
   #articles .entretien .article-content {
     overflow-y: scroll;
-    padding: 0px 30px 100px 30px; }
+    padding: 0px 30px 100px 20px; }
     #articles .entretien .article-content h2 {
       font-family: 'Karla', sans-serif;
       font-size: 1.25em;
@@ -2585,8 +2588,10 @@ li {
       font-size: 1.2rem;
       position: absolute;
       right: 20px; }
-      #articles .entretien .article-footer .occurence .arrow-occurence:hover {
-        color: yellow; }
+      #articles .entretien .article-footer .occurence .arrow-occurence {
+        font-size: 1.2em; }
+        #articles .entretien .article-footer .occurence .arrow-occurence:hover {
+          color: yellow; }
       #articles .entretien .article-footer .occurence > div {
         display: inline-block; }
         #articles .entretien .article-footer .occurence > div > div {
@@ -2600,10 +2605,10 @@ li {
 
 .jspVerticalBar {
   background-color: #FFF;
-  width: 12px; }
+  width: 7px; }
 
 .jspTrack {
-  background-color: #D4D3D3; }
+  background-color: rgba(0, 0, 255, 0.2); }
 
 .jspDrag {
   background-color: blue; }

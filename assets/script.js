@@ -343,7 +343,7 @@ $(document).ready(function(){
 		else{
 			$(".header").addClass('active');
 			$(".header").animate({left:0});
-			$("#articles").animate({"margin-left":headerWidth + paddingRight});
+			$("#articles").animate({"margin-left":headerWidth + paddingRight -15});
 		}
 	});
 
@@ -355,7 +355,9 @@ $(document).ready(function(){
 
 	
 	//Custom scrollbar for entretien div
-	//$('.entretien .article-content').jScrollPane();
+	// $(window).load(function(){
+	// 	$('.entretien .article-content').jScrollPane();
+	// });
 
 	//  ___            __  ___    __        __  
 	// |__  |  | |\ | /  `  |  | /  \ |\ | /__` 
@@ -366,7 +368,7 @@ $(document).ready(function(){
 			var titleHeight =  $(".entretien .article-title").outerHeight();
 			var footerHeight = $(".entretien .article-footer").outerHeight();
 			var articleHeight = winHeight - (titleHeight+footerHeight);
-			$(".entretien .article-content").css("height", articleHeight - 42);
+			$(".entretien .article-content").css("height", articleHeight);
 			$(".header").css("height", winHeight);
 
 			//Calcule la largeur des articles (pour qu'il y ait 4 articles dans la fenêtres)
@@ -377,7 +379,7 @@ $(document).ready(function(){
 			$(".header").css("width", headerWidth);
 
 			//Calcule la marge de gauche pour les articles
-			$("#articles").css("margin-left", headerWidth + 40);
+			$("#articles").css("margin-left", headerWidth + $('.about-title').height() + 20);
 	}
 
 
